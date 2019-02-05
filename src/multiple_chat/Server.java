@@ -1,4 +1,4 @@
-package ss.week7.cmdchat;
+package multiple_chat;
 
 import java.io.IOException;
 import java.net.ServerSocket;
