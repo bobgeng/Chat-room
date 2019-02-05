@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
@@ -72,8 +73,8 @@ public class Client extends Thread{
 		// TODO insert body
 		this.clientName = name;
 		sock = new Socket(host,port);
-		in = new BufferedReader(new InputStreamReader(sock.getInputStream));
-		out = new BufferedWriter(new OutputStreamWriter(sock.getOutStream));
+		in = new BufferedReader(new InputStreamReader(sock.getInputStream()));
+		out = new BufferedWriter(new OutputStreamWriter(sock.getOutputStream()));
 	}
 
 	/**
