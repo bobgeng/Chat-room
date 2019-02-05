@@ -70,6 +70,10 @@ public class Client extends Thread{
 	public Client(String name, InetAddress host, int port)
 			throws IOException {
 		// TODO insert body
+		this.clientName = name;
+		sock = new Socket(host,port);
+		in = new BufferedReader(new InputStreamReader(sock.getInputStream));
+		out = new BufferedWriter(new OutputStreamWriter(sock.getOutStream));
 	}
 
 	/**
@@ -78,17 +82,40 @@ public class Client extends Thread{
 	 */
 	public void run() {
 		// TODO insert body
+        try{
+            String msg = in.readLine();
+            while (msg !=null){
+                print(msg);
+                msg = in.readLine();
+            }
+            shutdown();
+        }catch (IOException e){
+            shutdown();
+        }
 	}
 
 	/** send a message to a ClientHandler. */
 	public void sendMessage(String msg) {
 		// TODO insert body
+        try{
+            out.write(msg);
+            out.newLine();
+            out.flush();
+        }catch (IOException e){
+            shutdown();
+        }
 	}
 
 	/** close the socket connection. */
 	public void shutdown() {
 		print("Closing socket connection...");
 		// TODO insert body
+        print("Closing socket connection...");
+        try {
+            sock.close();
+        }catch (IOException e){
+            print("ERROR: error closing the socket connection!");
+        }
 	}
 
 	/** returns the client name */
