@@ -10,11 +10,6 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 
 
-/**
- * Client class for a simple client-server application
- * @author  Theo Ruys
- * @version 2005.02.21
- */
 public class Client extends Thread{
 	private static final String USAGE
         = "usage: java week7.cmdchat.Client <name> <address> <port>";
@@ -70,7 +65,6 @@ public class Client extends Thread{
 	 */
 	public Client(String name, InetAddress host, int port)
 			throws IOException {
-		// TODO insert body
 		this.clientName = name;
 		sock = new Socket(host,port);
 		in = new BufferedReader(new InputStreamReader(sock.getInputStream()));
@@ -82,7 +76,6 @@ public class Client extends Thread{
 	 * be forwarded to the MessageUI
 	 */
 	public void run() {
-		// TODO insert body
         try{
             String msg = in.readLine();
             while (msg !=null){
@@ -97,7 +90,6 @@ public class Client extends Thread{
 
 	/** send a message to a ClientHandler. */
 	public void sendMessage(String msg) {
-		// TODO insert body
         try{
             out.write(msg);
             out.newLine();
@@ -110,8 +102,6 @@ public class Client extends Thread{
 	/** close the socket connection. */
 	public void shutdown() {
 		print("Closing socket connection...");
-		// TODO insert body
-        print("Closing socket connection...");
         try {
             sock.close();
         }catch (IOException e){

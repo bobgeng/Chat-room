@@ -7,11 +7,6 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.Socket;
 
-/**
- * ClientHandler.
- * @author  Theo Ruys
- * @version 2005.02.21
- */
 public class ClientHandler extends Thread {
     private Server server;
     private BufferedReader in;
@@ -24,7 +19,6 @@ public class ClientHandler extends Thread {
      */
     //@ requires serverArg != null && sockArg != null;
     public ClientHandler(Server serverArg, Socket sockArg) throws IOException {
-        // TODO insert body
     	this.server = serverArg;
     	in = new BufferedReader(new InputStreamReader(sockArg.getInputStream()));
     	out = new BufferedWriter(new OutputStreamWriter(sockArg.getOutputStream()));
@@ -50,7 +44,6 @@ public class ClientHandler extends Thread {
      * broken and shutdown() will be called. 
      */
     public void run() {
-        // TODO insert body
     	try {
     		String msg = in.readLine();
     		while(msg != null) {
@@ -59,7 +52,6 @@ public class ClientHandler extends Thread {
     		}
     		shutdown();
     	}catch (IOException e) {
-			// TODO: handle exception
     		shutdown();
 		}
     }
@@ -71,13 +63,11 @@ public class ClientHandler extends Thread {
      * and shutdown() is called.
      */
     public void sendMessage(String msg) {
-        // TODO insert body
     	try {
 			out.write(msg);
 			out.newLine();
 			out.flush();
 		} catch (Exception e) {
-			// TODO: handle exception
 			shutdown();
 		}
     }
