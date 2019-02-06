@@ -12,7 +12,7 @@ import java.net.UnknownHostException;
 
 public class Client extends Thread{
 	private static final String USAGE
-        = "usage: java week7.cmdchat.Client <name> <address> <port>";
+        = "usage: java multiple_chat.Client <name> <address> <port>";
 
 	/** Start een Client-applicatie op. */
 	public static void main(String[] args) {
