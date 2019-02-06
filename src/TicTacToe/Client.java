@@ -10,8 +10,6 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
-import TicTacToe.Server;
-
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -89,6 +87,7 @@ public class Client {
      * an OPPONENT_QUIT message is recevied then the loop will exit and the server will be
      * sent a "QUIT" message also.
      */
+	
     public void play() throws Exception {
         String response;
         try {
