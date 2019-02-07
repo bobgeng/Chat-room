@@ -16,7 +16,7 @@ public class Board {
 	public Board() {
 		board = new State[BOARD_WIDTH][BOARD_WIDTH];
 		movesAvailable = new HashSet<>();
-		//reset();
+		reset();
 	}
 	
 	/**
