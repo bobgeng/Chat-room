@@ -19,7 +19,7 @@ public class Board {
 		//reset();
 	}
 	
-	/**
+    /**
      * Set the cells to be blank and load the available moves (all the moves are
      * available at the start of the game).
      */
@@ -31,7 +31,7 @@ public class Board {
 		}
 	}
 	
-	/**
+    /**
      * Restart the game with a new blank board.
      */
 	public void reset() {
@@ -42,7 +42,7 @@ public class Board {
 		initialize();
 	}
 	
-	/**
+    /**
      * Places an X or an O on the specified index depending on whose turn it is.
      * @param index     the position on the board (example: index 4 is location (0, 1))
      * @return          true if the move has not already been played
@@ -51,7 +51,7 @@ public class Board {
 		return move(index % BOARD_WIDTH, index/BOARD_WIDTH);
 	}
 	
-	/**
+    /**
      * Places an X or an O on the specified location depending on who turn it is.
      * @param x         the x coordinate of the location
      * @param y         the y coordinate of the location
@@ -87,7 +87,7 @@ public class Board {
 		return true;
 	}
 	
-	/**
+    /**
      * Check to see if the game is over (if there is a winner or a draw).
      * @return          true if the game is over
      */
@@ -103,7 +103,7 @@ public class Board {
 		return board.clone();
 	}
 	
-	/**
+    /**
      * Check to see who's turn it is.
      * @return          the player who's turn it is
      */
@@ -111,7 +111,7 @@ public class Board {
 		return playersTurn;
 	}
 	
-	/**
+    /**
      * Check to see who won.
      * @return          the player who won (or Blank if the game is a draw)
      */
@@ -122,7 +122,7 @@ public class Board {
 		return winner;
 	}
 	
-	/**
+    /**
      * Get the indexes of all the positions on the board that are empty.
      * @return          the empty cells
      */
@@ -130,7 +130,7 @@ public class Board {
 		return movesAvailable;
 	}
 	
-	/**
+    /**
      * Checks the specified row to see if there is a winner.
      * @param row       the row to check
      */
@@ -146,7 +146,7 @@ public class Board {
 			}
 	}
 	
-	/**
+    /**
      * Checks the specified column to see if there is a winner.
      * @param column    the column to check
      */
@@ -162,7 +162,7 @@ public class Board {
 		}
 	}
 	
-	/**
+    /**
      * Check the left diagonal to see if there is a winner.
      * @param x         the x coordinate of the most recently played move
      * @param y         the y coordinate of the most recently played move
@@ -181,7 +181,7 @@ public class Board {
         }
     }
 	
-	/**
+    /**
      * Check the right diagonal to see if there is a winner.
      * @param x     the x coordinate of the most recently played move
      * @param y     the y coordinate of the most recently played move
@@ -200,7 +200,7 @@ public class Board {
 		}
 	}
 	
-	/**
+    /**
      * Get a deep copy of the Tic Tac Toe board.
      * @return      an identical copy of the board
      */
