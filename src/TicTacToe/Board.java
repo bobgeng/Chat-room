@@ -96,9 +96,9 @@ public class Board {
 	}
 	
 	/**
-	* Get a copy of the array that represents the board.
-	* @return          the board array
-	*/
+	 * Get a copy of the array that represents the board.
+	 * @return          the board array
+	 */
 	public State[][] toArray(){
 		return board.clone();
 	}
