@@ -90,7 +90,7 @@ class Game {
      * the move so it can update its client.
      */
     public synchronized boolean legalMove(int location, Player player) {
-        if (player == currentPlayer && board[location] == null) {
+        if (player.equals(currentPlayer) && board[location] == null) {
             board[location] = currentPlayer;
             currentPlayer = currentPlayer.opponent;
             currentPlayer.otherPlayerMoved(location);
